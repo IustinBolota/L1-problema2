@@ -11,7 +11,11 @@ public class FisierText {
             text+=line;
             text+="\n";
         }
+        text=EliminarePunctuatie(text);
+        System.out.println("Textul din fisier dupa eliminarea semnelor de punctuatie:");
+        System.out.print(text);
         text=EliminareSpatii(text);
+        System.out.println("Textul din fisier dupa eliminarea spatiilor muktiple:");
         System.out.print(text);
     }
 
@@ -22,6 +26,17 @@ public class FisierText {
                 while(text.charAt(j)==' '){
                     text=text.substring(0,i)+text.substring(j);
                 }
+            }
+        }
+        return text;
+    }
+
+    private static String EliminarePunctuatie(String text){
+        String punctuatie=".,;:?!-\"'()[]";
+        for(int i=0;i<text.length();i++){
+            if(punctuatie.indexOf(text.charAt(i))!=-1){
+                text=text.substring(0,i)+text.substring(i+1);
+                i--;
             }
         }
         return text;
