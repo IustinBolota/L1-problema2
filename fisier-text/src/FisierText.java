@@ -1,8 +1,12 @@
 import java.io.*;
+import java.nio.Buffer;
 
 public class FisierText {
     public static void main(String[] args) throws IOException{
-        FileReader fr = new FileReader("intrare.txt");
+        System.out.print("Introduceti locatia fisierului cu datele de intrare: ");
+        BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
+        File f = new File(buff.readLine());
+        FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         String line;
         String text="";
