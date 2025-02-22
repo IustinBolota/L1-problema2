@@ -12,11 +12,18 @@ public class FisierText {
             text+="\n";
         }
         text=EliminarePunctuatie(text);
-        System.out.println("Textul din fisier dupa eliminarea semnelor de punctuatie:");
-        System.out.print(text);
+        /*System.out.println("Textul din fisier dupa eliminarea semnelor de punctuatie:");
+        System.out.print(text);*/
         text=EliminareSpatii(text);
-        System.out.println("Textul din fisier dupa eliminarea spatiilor muktiple:");
+        /*System.out.println("Textul din fisier dupa eliminarea spatiilor multiple:");
+        System.out.print(text);*/
+        text=LitereMari(text);
+        System.out.println("Textul din fisier dupa procesare:");
         System.out.print(text);
+    }
+
+    private static String LitereMari(String text) {
+        return text.toUpperCase();
     }
 
     private static String EliminareSpatii(String text) {
